@@ -19,9 +19,9 @@ script:
     && (echo 'No ruby test: pass' && exit 1)
     || (echo 'No ruby test: fail' && exit 0)
   - 'ansible-playbook $SITE_AND_INVENTORY --syntax-check'
-  - 'ansible-playbook $SITE_AND_INVENTORY --connection=local -vvvv'
+  - 'ansible-playbook $SITE_AND_INVENTORY --connection=local -vvvv --sudo'
   - >
-    ansible-playbook $SITE_AND_INVENTORY --connection=local
+    ansible-playbook $SITE_AND_INVENTORY --connection=local --sudo
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
@@ -36,7 +36,7 @@ script:
     && (echo 'Multiple rubies test: pass' && exit 0)
     || (echo 'Multiple rubies test: fail' && exit 1)
   - >
-    ansible-playbook $SITE_AND_INVENTORY --connection=local --extra-vars='rvm1_delete_ruby=ruby-2.1.0'
+    ansible-playbook $SITE_AND_INVENTORY --extra-vars='rvm1_delete_ruby=ruby-2.1.0' --connection=local --sudo
     | grep -q 'ok=1.*failed=0'
     && (echo 'Delete ruby test: pass' && exit 0)
     || (echo 'Delete ruby test: fail' && exit 1)
