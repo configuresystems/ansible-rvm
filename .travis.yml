@@ -55,5 +55,3 @@ script:
     | grep '3'
     && (echo 'Really deleted ruby test: pass' && exit 0)
     || (echo 'Really deleted ruby test: fail' && exit 1)
-
-  - tree ~/.rvm
