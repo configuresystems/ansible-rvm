@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/configuresystems/rvm1-ansible.svg)](https://travis-ci.org/configuresystems/rvm1-ansible)
+[![Build Status](https://travis-ci.org/configuresystems/ansible-rvm.svg)](https://travis-ci.org/configuresystems/ansible-rvm)
 
 It is an [Ansible](http://www.ansible.com/home) role to install and manage ruby versions using rvm.
 
