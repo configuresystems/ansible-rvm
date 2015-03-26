@@ -27,7 +27,8 @@
   when: not rvm_binary.stat.exists
 
 - name: Import GPG keys
-  command: 'gpg --keyserver {{ rvm1_gpg_key_server }} --recv-keys {{ rvm1_gpg_keys }}'
+  #command: 'gpg --keyserver {{ rvm1_gpg_key_server }} --recv-keys {{ rvm1_gpg_keys }}'
+  raw: 'curl -sSL https://rvm.io/mpapis.asc | gpg --import -'
   changed_when: False
   when: rvm1_gpg_keys != ''
   sudo_user: '{{ rvm1_user }}'
