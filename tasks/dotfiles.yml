@@ -1,0 +1,12 @@
+---
+
+- name: copy dotfiles
+  copy: src={{ item }}
+        dest=/home/{{ username }}/.{{ item }}
+        owner=rails
+        group=rails
+        mode=0644
+  with_items:
+    - profile
+  tags:
+    - deploy
