@@ -3,8 +3,8 @@
 - name: copy dotfiles
   copy: src={{ item }}
         dest=/home/{{ username }}/.{{ item }}
-        owner=rails
-        group=rails
+        owner={{ username }}
+        group={{ username }}
         mode=0644
   with_items:
     - profile
