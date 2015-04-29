@@ -8,5 +8,14 @@
         mode=0644
   with_items:
     - profile
+    - bashrc
+  tags:
+    - deploy
+
+- name: change perms
+  file: path=/home/{{ username }}/.rvm
+        owner={{ username }}
+        group=rvm
+        recurse=yes
   tags:
     - deploy
