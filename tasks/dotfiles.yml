@@ -12,10 +12,10 @@
   tags:
     - deploy
 
-- name: change perms
-  file: path=/home/{{ username }}/.rvm
-        owner={{ username }}
-        group=rvm
-        recurse=yes
-  tags:
-    - deploy
+#- name: change perms
+#  file: path=/home/{{ username }}/.rvm
+#        owner={{ username }}
+#        group=rvm
+#        recurse=yes
+#  tags:
+#    - deploy
