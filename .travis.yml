@@ -7,7 +7,7 @@ env:
 
 before_install:
   - '__rvm_unload ; rm -rf ~/.rvm'
-  - groupadd rvm
+  - 'sudo groupadd rvm'
 
 install:
   - 'pip install ansible==1.8.4'
