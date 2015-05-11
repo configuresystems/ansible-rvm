@@ -47,4 +47,4 @@
   when: rvm1_delete_ruby and detect_delete_ruby.rc == 0
 
 - name: Set Default Ruby
-  raw: export PATH=${HOME}/.rvm/bin:${PATH} && bash -lc '{{ rvm1_rvm }} --default use {{ rvm1_default_ruby_version }}'
+  raw: export PATH=${HOME}/.rvm/bin:${PATH} && bash -lc 'rvm --default use {{ rvm1_default_ruby_version }}'
