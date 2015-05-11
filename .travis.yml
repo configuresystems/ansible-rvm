@@ -57,4 +57,3 @@ script:
     || (echo 'Really deleted ruby test: fail' && exit 1)
 
   - which ruby
-  - which rails

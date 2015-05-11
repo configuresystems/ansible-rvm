@@ -1,9 +1,10 @@
 ---
+
 galaxy_info:
-  author: Nick Janetakis
+  author: John Martin
   description: The official rvm role to install and manage your ruby versions.
-  company: 
-  license: license (MIT)
+  company: Configure Systems
+  license: MIT
   min_ansible_version: 1.5
 
   platforms:
@@ -19,3 +20,18 @@ galaxy_info:
   - web
 
 dependencies: []
+
+
+ansigenome_info:
+  galaxy_id: ''
+
+  travis: True
+
+  synopsis: |
+    Describe your role in a few paragraphs....
+
+  usage: |
+    Describe how to use in more detail...
+
+  #custom: |
+  #  Any custom output you want after the usage section..
