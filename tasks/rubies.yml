@@ -45,3 +45,6 @@
   command: '{{ rvm1_rvm }} remove {{ rvm1_delete_ruby }}'
   changed_when: False
   when: rvm1_delete_ruby and detect_delete_ruby.rc == 0
+
+- name: Set Default Ruby
+  command: '{{ rvm1_rvm }} --default use {{ rvm1_default_ruby_version }}'
