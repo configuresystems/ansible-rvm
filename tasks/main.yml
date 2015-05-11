@@ -1,5 +1,5 @@
 ---
 
 - include: 'rvm.yml'
-- include: 'rubies.yml'
 - include: 'dotfiles.yml'
+- include: 'rubies.yml'
