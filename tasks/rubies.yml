@@ -14,6 +14,14 @@
   with_items: detect_rubies.results
   sudo_user: '{{ rvm1_user }}'
 
+- name: change perms
+  file: path=/home/{{ username }}/.rvm
+        owner={{ username }}
+        group=rvm
+        recurse=yes
+  tags:
+    - deploy
+
 - name: Detect default ruby version
   command: '{{ rvm1_rvm }} alias list default'
   changed_when: False
@@ -46,5 +54,3 @@
   changed_when: False
   when: rvm1_delete_ruby and detect_delete_ruby.rc == 0
 
-- name: Set Default Ruby
-  raw: export PATH=${HOME}/.rvm/bin:${PATH} && bash -lc 'rvm --default use {{ rvm1_default_ruby_version }}'
