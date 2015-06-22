@@ -27,6 +27,8 @@
   changed_when: False
   register: detect_default_ruby_version
 
+- debug: var={{ rvm1_default_ruby_version }}
+
 - name: Select default ruby
   command: '{{ rvm1_rvm }} alias create default {{ rvm1_default_ruby_version }}'
   when: detect_default_ruby_version.stdout == '' or
